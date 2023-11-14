@@ -30,7 +30,7 @@ createApp({
     };
   },
   created() {
-    
+    this.interval = setInterval(this.showNext, 3000);
   },
   methods: {
     showNext: function() {
