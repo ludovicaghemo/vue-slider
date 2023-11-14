@@ -5,7 +5,7 @@ createApp({
     return {
         slides: [
             {
-            image: 'img/01.webp',
+                image: 'img/01.webp',
                 title: 'Marvel\'s Spiderman Miles Morale',
                 text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
             }, {
@@ -26,6 +26,7 @@ createApp({
                 text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
             }
         ],
+        activeIndex: 0,
     };
   },
   created() {
