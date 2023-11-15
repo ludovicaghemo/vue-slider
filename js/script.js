@@ -27,10 +27,13 @@ createApp({
             }
         ],
         activeIndex: 0,
+        interval: null
     };
   },
   created() {
-    this.interval = setInterval(this.showNext, 3000);
+    // this.interval = setInterval(this.showNext, 3000);
+    this.startAutoplay();
+
   },
   methods: {
     showNext: function() {
@@ -45,10 +48,17 @@ createApp({
             this.activeIndex = this.slides.length - 1;
         } else {
             this.activeIndex--;
-        }
+        } 
     },
-    chooseImage: function(active) {
-        this.activeIndex = active;
+    chooseImage: function(clickedIndex) {
+        this.activeIndex = clickedIndex;
+    },
+    stopAutoplay: function(){
+        clearInterval(this.interval);
+        this.interval = null;
+    },
+    startAutoplay: function(){
+        this.interval = setInterval(this.showNext, 3000);
     }
   },
 }).mount("#app");
